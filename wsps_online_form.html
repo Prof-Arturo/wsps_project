@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Washington State Periphenomenal Survey</title>
     <style>
-        /* --- LOAD CUSTOM FONT --- */
         @font-face {
             font-family: 'NationalPark';
-            /* Ensure the media folder contains this exact filename */
             src: url('media/NationalPark-VariableVF.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
@@ -41,6 +39,35 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
+        /* --- SUCCESS MESSAGE STYLING (Initially Hidden) --- */
+        #success-message {
+            display: none; /* Hidden by default */
+            text-align: center;
+            padding: 20px;
+        }
+
+        #success-message h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        .debrief-text {
+            text-align: left;
+            margin-top: 30px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .debrief-text h3 {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-family: 'NationalPark', sans-serif;
+            text-transform: uppercase;
+        }
+
         header {
             border-bottom: 2px solid var(--primary-color);
             margin-bottom: 30px;
@@ -48,7 +75,6 @@
         }
 
         h1 {
-            /* Custom Font Applied */
             font-family: 'NationalPark', sans-serif;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -58,7 +84,6 @@
         }
 
         h2 {
-            /* Custom Font Applied */
             font-family: 'NationalPark', sans-serif;
             color: var(--primary-color);
             font-size: 22px;
@@ -78,7 +103,6 @@
         }
 
         label {
-            /* Custom Font Applied */
             font-family: 'NationalPark', sans-serif;
             letter-spacing: 0.5px;
             display: block;
@@ -142,7 +166,6 @@
         }
 
         button.submit-btn {
-            /* Custom Font Applied */
             font-family: 'NationalPark', sans-serif;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -173,14 +196,33 @@
 <body>
 
 <div class="container">
+    
     <header>
         <h1>Washington State Periphenomenal Survey</h1>
         <h2>Experience Questionnaire</h2>
-        <p><strong>Statement of Purpose:</strong> This research aims to systematically document anomalous human experiences—events that exist on the periphery of current scientific understanding. We are interested in documenting the event exactly as you perceived it. We are not here to judge the reality of your experience, but to create a comprehensive record.</p>
-        <p class="intro">All responses are strictly anonymous unless you choose to provide contact information below.</p>
+        <p><strong>Statement of Purpose:</strong> This research aims to systematically document anomalous human experiences. We are not here to judge the reality of your experience, but to create a comprehensive record.</p>
+        <p class="intro">All responses are strictly anonymous unless you choose to provide contact information.</p>
     </header>
 
-    <form name="submit-to-google-sheet">
+    <div id="success-message">
+        <h1>Submission Received</h1>
+        <p style="font-size: 1.2em; color: #555;">Your experience has been securely logged in the Archive.</p>
+        
+        <div class="debrief-text">
+            <h3>What happens next?</h3>
+            <p>We are not here to 'debunk' or 'validate' your reality. Our goal is to catalog the breadth of human experience. Your entry helps us understand how modern people interpret the unexplained.</p>
+            
+            <h3>Privacy & Safety</h3>
+            <p>Your response is anonymous. If recalling this event caused you distress, please take a moment to ground yourself in your immediate surroundings. If you feel overwhelmed, please contact a local support resource or crisis line (988 in the US).</p>
+            
+            <h3>Want to help?</h3>
+            <p>You may share the survey link, but please <strong>do not discuss specific questions</strong> with future participants. This ensures every narrative remains authentic and uninfluenced.</p>
+        </div>
+        
+        <button onclick="window.location.href='index.html'" class="submit-btn" style="margin-top: 30px;">Return to Home</button>
+    </div>
+
+    <form name="submit-to-google-sheet" id="survey-form">
         <h2>Part 1: Background & Context</h2>
         
         <div class="form-group">
@@ -376,6 +418,8 @@
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycby9JuBHL4xWHJCA_lcGYed8DJohwsEgana3wKsP_yi2A9Su_KD8O4BcsgH3dvo2XECO7A/exec'; 
   const form = document.forms['submit-to-google-sheet'];
+  const successDiv = document.getElementById('success-message');
+  const formElement = document.getElementById('survey-form');
 
   form.addEventListener('submit', e => {
     e.preventDefault();
@@ -388,10 +432,15 @@
 
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
-          // Success!
-          alert("Thank you! Your experience has been securely logged.");
-          btn.innerHTML = "Submitted";
-          form.reset(); // Clears the form
+          // Success! 
+          // 1. Hide the Form
+          formElement.style.display = 'none';
+          // 2. Show the Success Message
+          successDiv.style.display = 'block';
+          // 3. Scroll to top
+          window.scrollTo(0,0);
+          
+          form.reset(); 
       })
       .catch(error => {
           // Error!
