@@ -206,7 +206,7 @@
 
     <div id="success-message">
         <h1>Submission Received</h1>
-        <p style="font-size: 1.2em; color: #555;">Your experience has been securely logged in the Archive.</p>
+        <p style="font-size: 1.2em; color: #555;">Your experience has been securely logged in the WSPS archives.</p>
         
         <div class="debrief-text">
             <h3>What happens next?</h3>
@@ -266,4 +266,190 @@
             <p class="sub-label">Prior to your experience, which of the following topics did you engage with regularly? (Select all that apply)</p>
             <div class="checkbox-group">
                 <div class="checkbox-item">
-                    <input type="checkbox" id="med_digital" name="med_digital
+                    <input type="checkbox" id="med_digital" name="med_digital" value="1">
+                    <label for="med_digital">Online forums regarding unexplained events (e.g., Reddit, 4chan, etc.)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="med_trad" name="med_trad" value="1">
+                    <label for="med_trad">Podcasts/Videos about the paranormal, true crime, or high strangeness</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="med_sim" name="med_sim" value="1">
+                    <label for="med_sim">Content related to "simulation theory," "shifting," or quantum mechanics</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="med_scifi" name="med_scifi" value="1">
+                    <label for="med_scifi">Science Fiction / Horror media</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="med_naive" name="med_naive" value="1">
+                    <label for="med_naive">None of the above</label>
+                </div>
+            </div>
+        </div>
+
+        <h2>Part 2: The Account</h2>
+
+        <div class="form-group">
+            <label for="narrative_blob">7. Description of Event</label>
+            <p class="sub-label">Please describe your experience in as much detail as possible. Focus on the sequence of events—how it started, what happened, and how it ended.</p>
+            <textarea id="narrative_blob" name="narrative_blob" rows="10" placeholder="Type your experience here..." required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="test_method">8. Immediate Reaction & Verification</label>
+            <p class="sub-label">During the event, did you take any steps to test if what you were seeing/feeling was real? (e.g., turning on lights, asking others, checking devices).</p>
+            <input type="text" id="test_method" name="test_method" placeholder="If yes, describe what you did. If no, leave blank.">
+        </div>
+
+        <h2>Part 3: Physical & Environmental Factors</h2>
+
+        <div class="form-group">
+            <label>9. State of Awareness</label>
+            <p class="sub-label">What was your physical state immediately <em>before</em> the event began?</p>
+            <div class="radio-group">
+                <div class="radio-item"><input type="radio" name="cons_state" value="AWAKE" id="st_awake"><label for="st_awake">Wide awake and active</label></div>
+                <div class="radio-item"><input type="radio" name="cons_state" value="AUTO" id="st_auto"><label for="st_auto">Driving / Performing a repetitive task</label></div>
+                <div class="radio-item"><input type="radio" name="cons_state" value="REST" id="st_rest"><label for="st_rest">Resting / Relaxing</label></div>
+                <div class="radio-item"><input type="radio" name="cons_state" value="HYP_G" id="st_hypg"><label for="st_hypg">Just falling asleep (Hypnagogic)</label></div>
+                <div class="radio-item"><input type="radio" name="cons_state" value="HYP_P" id="st_hypp"><label for="st_hypp">Just waking up (Hypnopompic)</label></div>
+                <div class="radio-item"><input type="radio" name="cons_state" value="ALT" id="st_alt"><label for="st_alt">Under the influence of medication/substances</label></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>10. Physical Sensations</label>
+            <p class="sub-label">Did you experience any of the following <em>physically</em> during the event? (Select all that apply)</p>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox" id="soma_paralysis" name="soma_paralysis" value="1"><label for="soma_paralysis">Inability to move (Paralysis)</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="soma_pressure" name="soma_pressure" value="1"><label for="soma_pressure">Pressure or weight on the chest/body</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="soma_vibe" name="soma_vibe" value="1"><label for="soma_vibe">"Electric" sensations, buzzing, or vibrations</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="soma_temp" name="soma_temp" value="1"><label for="soma_temp">Sudden distinct change in temperature</label></div>
+                <div class="checkbox-item"><input type="checkbox" id="soma_nausea" name="soma_nausea" value="1"><label for="soma_nausea">Nausea, dizziness, or disorientation</label></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>11. Primary Sensory Characteristics</label>
+            <p class="sub-label">Please categorize the primary anomaly you encountered:</p>
+            <select name="vis_type" id="vis_type">
+                <option value="" disabled selected>Select the closest match...</option>
+                <option value="SHADOW">Visual: Shadow / Dark form</option>
+                <option value="SOLID">Visual: Solid / Life-like form</option>
+                <option value="LIGHT">Visual: Lights / Orbs</option>
+                <option value="GLITCH">Visual: Distortion / Glitch / Pixelation</option>
+                <option value="AUD_VOICE">Auditory: Distinct voice/words</option>
+                <option value="AUD_MECH">Auditory: Mechanical / Static noise</option>
+                <option value="AUD_PHYS">Auditory: Footsteps / Knocks</option>
+                <option value="OTHER">Other / Non-Visual</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>12. Witness Corroboration</label>
+            <div class="radio-group">
+                <div class="radio-item"><input type="radio" name="social_ctx" value="SHARED" id="soc_shared"><label for="soc_shared">Others were present and saw/heard the same thing.</label></div>
+                <div class="radio-item"><input type="radio" name="social_ctx" value="DIV" id="soc_div"><label for="soc_div">Others were present but experienced something different.</label></div>
+                <div class="radio-item"><input type="radio" name="social_ctx" value="PASSIVE" id="soc_pass"><label for="soc_pass">Others were present but noticed nothing.</label></div>
+                <div class="radio-item"><input type="radio" name="social_ctx" value="SOLO" id="soc_solo"><label for="soc_solo">I was alone.</label></div>
+            </div>
+        </div>
+
+        <h2>Part 4: Sharing & Precedent</h2>
+
+        <div class="form-group">
+            <label>13. Prior Awareness</label>
+            <p class="sub-label">Had you heard of identical or very similar events (e.g., in media, online) <em>before</em> this happened to you?</p>
+            <div class="radio-group">
+                <div class="radio-item"><input type="radio" name="prior_aware" value="1" id="pa_yes"><label for="pa_yes">Yes, I was familiar with this type of event.</label></div>
+                <div class="radio-item"><input type="radio" name="prior_aware" value="0.5" id="pa_vague"><label for="pa_vague">I had a vague idea, but didn't think about it often.</label></div>
+                <div class="radio-item"><input type="radio" name="prior_aware" value="0" id="pa_no"><label for="pa_no">No, I had no prior concept of this.</label></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>14. Context of Occurrence</label>
+            <p class="sub-label">Were you actively seeking an unusual experience when this occurred? (e.g., visiting a "haunted" location, using specific apps).</p>
+            <div class="radio-group">
+                <div class="radio-item"><input type="radio" name="is_seeking" value="1" id="seek_yes"><label for="seek_yes">Yes</label></div>
+                <div class="radio-item"><input type="radio" name="is_seeking" value="0" id="seek_no"><label for="seek_no">No</label></div>
+            </div>
+        </div>
+
+        <h2>Part 5: Interpretation</h2>
+
+        <div class="form-group">
+            <label for="subj_label">15. Classification</label>
+            <p class="sub-label">If you had to put a label on what you encountered, what term would you use? (e.g., Glitch, Spirit, Entity, Hallucination, etc.)</p>
+            <input type="text" id="subj_label" name="subj_label">
+        </div>
+
+        <div class="form-group">
+            <label>16. Personal Theory</label>
+            <p class="sub-label">Based on your experience, do you believe the source of the event was:</p>
+            <div class="radio-group">
+                <div class="radio-item"><input type="radio" name="subj_theory" value="INT" id="th_int"><label for="th_int">Internal (Psychological / Neurological)</label></div>
+                <div class="radio-item"><input type="radio" name="subj_theory" value="EXT" id="th_ext"><label for="th_ext">External (Physical / Environmental)</label></div>
+                <div class="radio-item"><input type="radio" name="subj_theory" value="SPIRIT" id="th_spir"><label for="th_spir">Non-Physical / Spiritual / Interdimensional</label></div>
+                <div class="radio-item"><input type="radio" name="subj_theory" value="TECH" id="th_tech"><label for="th_tech">Technological / Simulated Reality</label></div>
+                <div class="radio-item"><input type="radio" name="subj_theory" value="UNK" id="th_unk"><label for="th_unk">Undecided</label></div>
+            </div>
+        </div>
+
+        <h2>Part 6: Contact Information (Optional)</h2>
+
+        <div class="form-group">
+            <label for="contact_email">Email Address</label>
+            <p class="sub-label">Enter your email if you are open to being contacted for a follow-up interview.</p>
+            <input type="text" id="contact_email" name="contact_email" placeholder="name@example.com">
+        </div>
+
+        <div class="form-group">
+            <label for="contact_phone">Phone Number</label>
+            <p class="sub-label">Enter your phone number if you prefer to be contacted via text or call.</p>
+            <input type="text" id="contact_phone" name="contact_phone" placeholder="(555) 555-5555">
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Experience Log</button>
+        <p class="note" style="text-align: center;">By clicking Submit, you acknowledge that your anonymous response will be included in the research database.</p>
+
+    </form>
+</div>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycby9JuBHL4xWHJCA_lcGYed8DJohwsEgana3wKsP_yi2A9Su_KD8O4BcsgH3dvo2XECO7A/exec'; 
+  const form = document.forms['submit-to-google-sheet'];
+  const successDiv = document.getElementById('success-message');
+  const formElement = document.getElementById('survey-form');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    // Change button text to indicate loading
+    const btn = document.querySelector('.submit-btn');
+    const originalText = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = "Saving...";
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+          // Success! 
+          // 1. Hide the Form
+          formElement.style.display = 'none';
+          // 2. Show the Success Message
+          successDiv.style.display = 'block';
+          // 3. Scroll to top
+          window.scrollTo(0,0);
+          
+          form.reset(); 
+      })
+      .catch(error => {
+          // Error!
+          console.error('Error!', error.message);
+          alert("There was an error submitting the form. Please try again.");
+          btn.disabled = false;
+          btn.innerHTML = originalText;
+      });
+  });
+</script>
+</body>
+</html>
