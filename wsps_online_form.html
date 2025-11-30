@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Washington State Periphenomenal Survey</title>
+    <title>⛰️👁️📝 Washington State Periphenomenal Survey</title>
     <style>
         @font-face {
             font-family: 'NationalPark';
@@ -37,6 +37,16 @@
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: relative; /* Needed for logo positioning */
+        }
+
+        /* --- LOGO STYLING --- */
+        .logo {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 80px; /* Adjust size as needed */
+            height: auto;
         }
 
         /* --- SUCCESS MESSAGE STYLING (Initially Hidden) --- */
@@ -72,6 +82,7 @@
             border-bottom: 2px solid var(--primary-color);
             margin-bottom: 30px;
             padding-bottom: 20px;
+            padding-right: 90px; /* Make space for logo on small screens */
         }
 
         h1 {
@@ -81,21 +92,23 @@
             color: var(--primary-color);
             font-size: 28px;
             margin-bottom: 10px;
+            margin-top: 0;
         }
 
         h2 {
             font-family: 'NationalPark', sans-serif;
             color: var(--primary-color);
             font-size: 22px;
-            margin-top: 30px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
+            margin-top: 10px;
+            border-bottom: none; /* Removed internal border to clean up header */
+            padding-bottom: 0;
         }
 
         p.intro {
             font-size: 14px;
             color: #666;
             font-style: italic;
+            margin-top: 15px;
         }
 
         .form-group {
@@ -190,6 +203,18 @@
             color: #999;
             margin-top: 10px;
         }
+        
+        /* Mobile adjustment for Logo */
+        @media (max-width: 600px) {
+            .logo {
+                width: 60px;
+                top: 20px;
+                right: 20px;
+            }
+            h1 {
+                font-size: 22px; /* Smaller font on mobile so it doesn't hit logo */
+            }
+        }
 
     </style>
 </head>
@@ -198,8 +223,9 @@
 <div class="container">
     
     <header>
+        <img src="media/wsps_logo.png" alt="WSPS Logo" class="logo">
         <h1>Washington State Periphenomenal Survey</h1>
-        <h2>Experience Questionnaire</h2>
+        <h2>📝 Experience Questionnaire</h2>
         <p><strong>Statement of Purpose:</strong> This research aims to systematically document anomalous human experiences. We are not here to judge the reality of your experience, but to create a comprehensive record.</p>
         <p class="intro">All responses are strictly anonymous unless you choose to provide contact information.</p>
     </header>
