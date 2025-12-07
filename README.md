@@ -2,6 +2,7 @@
 ### 👁️📝 *Systematic Documentation of Anomalous Experience*
 
 ---
+---
 
 ## 🔐 Administrative Access
 *Authorized Directorate Personnel Only*
@@ -9,6 +10,7 @@
 * **[>> 📊 Access Master Data Log (Google Sheet)](https://docs.google.com/spreadsheets/d/1FYre5TV6QuT-pY58apgDjkniJb1nM4l7JfQUO5IcXXc/edit?usp=sharing)**
 * **[>> 🌐 Launch Live Questionnaire](https://prof-arturo.github.io/wsps_project/wsps_online/)**
 
+---
 ---
 
 ## 📂 Project Directory & Asset Map
@@ -31,11 +33,17 @@
 
 #### **`/registry_data/`** (Analysis & Archival)
 * `WSPS Analyst Coding Cheat Sheet.pdf` _(Triage Logic)_
-* `WSPS Bibliography subj_Backrooms.pdf` _(Sub-Genre Reference)_
-* `WSPS Bibliography.pdf` _(Master Reference)_
 * `WSPS Data Log Structure.pdf` _(Schema Definition)_
 * `WSPS Master Data Dictionary & Coding Instrument.pdf` _(Variable Definitions)_
 * `WSPS_Database.csv` _(Offline Backup of Master Log)_
+* **`/library/` (The Reference Library)**
+    * `WSPS Bibliography index.pdf` _(Master Index)_
+    * `WSPS Bibliography main.pdf` _(Core Methodology)_
+    * `WSPS Bibliography subj_Backrooms.pdf` _(Liminality)_
+    * `WSPS Bibliography subj_Cryptozoology.pdf` _(Nature & Biology)_
+    * `WSPS Bibliography subj_High Strangeness.pdf` _(UAP & Lights)_
+    * `WSPS Bibliography subj_Night Assaults.pdf` _(Sleep & Physiology)_
+    * `WSPS Bibliography subj_Techno-Animism.pdf` _(Simulation & AI)_
 
 #### **`/wsps_online/`** (Public Web Interface)
 * `index.html` _(Splash Page)_
